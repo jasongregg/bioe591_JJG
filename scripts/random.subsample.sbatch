@@ -21,7 +21,9 @@
 
 module load Mamba/23.11.0-0
 eval "$(conda shell.bash hook)"
-conda activate demo
+
+#activate yml conda env
+conda activate demo_new
 
 #no longer need the below
 ##echo "reads	bases" > size.txt
@@ -29,7 +31,7 @@ conda activate demo
 
 # Define input and output
 # Input file
-INPUT=/home/g24p229/bioe-591-genomics/students/jason-gregg/data/catamenia_analis.fastq.gz
+INPUT=/home/g24p229/bioe-591-genomics/course-materials/data/intro/catamenia_analis.fastq.gz
 
 # Output file
 OUTPUT=/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/catamenia_analis_1k_random_reads_${SLURM_JOB_ID}.fastq
