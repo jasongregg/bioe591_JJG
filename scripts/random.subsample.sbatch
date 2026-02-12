@@ -25,16 +25,5 @@ eval "$(conda shell.bash hook)"
 #activate yml conda env
 conda activate demo_new
 
-#no longer need the below
-##echo "reads	bases" > size.txt
-###seqtk size ~/bioe-591-genomics/course-materials/data/intro/catamenia_analis.fastq.gz >> size.txt
-
-# Define input and output
-# Input file
-INPUT=/home/g24p229/bioe-591-genomics/course-materials/data/intro/catamenia_analis.fastq.gz
-
-# Output file
-OUTPUT=/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/catamenia_analis_1k_random_reads_${SLURM_JOB_ID}.fastq
-
 # Randomly sample 1000 reads
-seqtk sample -s100 $INPUT 1000 > $OUTPUT
+seqtk sample -s100 /home/g24p229/bioe-591-genomics/course-materials/data/intro/catamenia_analis.fastq.gz 1000 > /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/catamenia_analis_1k_random_reads.fastq.gz
