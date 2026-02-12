@@ -1,2 +1,4 @@
 raw_reads/
 . DS_Store
+data/*.fastq
+
