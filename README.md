@@ -1,15 +1,23 @@
-#This is the repository for jason-gregg BIOE591 github page
+#Jason Gregg
+#BIOE591 Ethan Linck
 
-#Currently, my repository includes two folders, scripts and outputs.
+##This is my BIOE591 course repository for Github page: bioe591_JJG
 
-#My homework scripts are in the scripts folder, whereas all outputs (.html files, error files)
-#are in the outputs folder
-
+##This is the README explaining the repository and its contents
 
 
-my rpostiroy has a subdirectory homework/ inside of which is my first 
-script# BIOE591 Coursework Repository
+########################
+########################
 
-homework 4 was added on Feb 19th and is associated with a trimmed_reads folder in outputs.
+
+#Currently, my repository includes two folders: scripts and outputs
+
+
+
+
+###Updates
+
+Feb 19th 2026: homework 4 scripts and fastp html json files for D. glauca were added.
+
 
 #this README was last updated on Feb 19th, 2026
