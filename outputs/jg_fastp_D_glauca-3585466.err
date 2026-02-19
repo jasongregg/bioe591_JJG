@@ -1,0 +1,51 @@
+ERROR: Failed to write: ~/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_161092_R1_trimmed.fastq.gz
+ERROR: Failed to write: ~/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_161139_R1_trimmed.fastq.gz
+ERROR: Failed to write: ~/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_161164_R1_trimmed.fastq.gz
+ERROR: Failed to write: ~/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_176849_R1_trimmed.fastq.gz
+ERROR: Failed to write: ~/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_176863_R1_trimmed.fastq.gz
+ERROR: Failed to write: ~/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_218504_R1_trimmed.fastq.gz
+Read1 before filtering:
+total reads: 3862862
+total bases: 583292162
+Q20 bases: 553203989(94.8417%)
+Q30 bases: 521857783(89.4676%)
+Q40 bases: 418958194(71.8265%)
+
+Read2 before filtering:
+total reads: 3862862
+total bases: 583292162
+Q20 bases: 460573682(78.9611%)
+Q30 bases: 374161522(64.1465%)
+Q40 bases: 229147732(39.2852%)
+
+Read1 after filtering:
+total reads: 3122809
+total bases: 451126334
+Q20 bases: 438297960(97.1564%)
+Q30 bases: 421144471(93.354%)
+Q40 bases: 349316612(77.4321%)
+
+Read2 after filtering:
+total reads: 3122809
+total bases: 451126334
+Q20 bases: 395279661(87.6206%)
+Q30 bases: 337057775(74.7147%)
+Q40 bases: 213092086(47.2356%)
+
+Filtering result:
+reads passed filter: 6245618
+reads failed due to low quality: 1478178
+reads failed due to too many N: 1928
+reads failed due to too short: 0
+reads with adapter trimmed: 694910
+bases trimmed due to adapters: 40971240
+
+Duplication rate: 1.67772%
+
+Insert size peak (evaluated by paired-end reads): 271
+
+JSON report: /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/sample161092.fastp.json
+HTML report: /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/sample161092.fastp.html
+
+fastp -i /home/g24p229/bioe-591-genomics/course-materials/data/raw_reads/Diglossa_glauca/Diglossa_glauca_161092_R1_001.fastq.gz -o /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_161092_R1_001_trimmed.fastq.gz -I /home/g24p229/bioe-591-genomics/course-materials/data/raw_reads/Diglossa_glauca/Diglossa_glauca_161092_R2_001.fastq.gz -O /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/Diglossa_glauca_161092_R2_001_trimmed.fastq.gz -h /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/sample161092.fastp.html -j /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/trimmed_reads/sample161092.fastp.json 
+fastp v1.0.1, time used: 60 seconds
