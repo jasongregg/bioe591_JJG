@@ -3,21 +3,15 @@
 
 ##This is my BIOE591 course repository for Github page: bioe591_JJG
 
-##This is the README explaining the repository and its contents
+**scripts**
+contains homework scripts in dedicated folders
 
-
-########################
-########################
-
-
-#Currently, my repository includes two folders: scripts and outputs
-
-
-
+**outputs**
+contains homework outputs in dedicated folders, including .MD files answering questions
 
 ###Updates
 
-Feb 19th 2026: homework 4 scripts and fastp html json files for D. glauca were added.
+Feb 19th 2026: homework 4 scripts and fastp html json files for D. glauca were added and pushed.
 
+Feb 26th: homework 5 scripts and outputs were added using globus and pushed to github.
 
-#this README was last updated on Feb 19th, 2026
