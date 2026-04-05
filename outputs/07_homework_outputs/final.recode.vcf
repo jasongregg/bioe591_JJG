@@ -1,0 +1,87 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.23+htslib-1.23
+##bcftoolsCommand=mpileup -a DP,AD -f /home/g24p229/bioe-591-genomics/students/jason-gregg/data/hemoglobin_references.fasta /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_161092.sorted.bam /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_161139.sorted.bam /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_161164.sorted.bam /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_176849.sorted.bam /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_176863.sorted.bam /home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_218504.sorted.bam
+##reference=file:///home/g24p229/bioe-591-genomics/students/jason-gregg/data/hemoglobin_references.fasta
+##contig=<ID=HBAA_Sicalis_luteiventris,length=880>
+##contig=<ID=HBAD_Sicalis_luteiventris,length=775>
+##contig=<ID=HBB2_Sicalis_luteiventris,length=2272>
+##contig=<ID=HBB_Sicalis_luteiventris,length=1358>
+##contig=<ID=HBE_Sicalis_luteiventris,length=1559>
+##contig=<ID=HBPI_Sicalis_luteiventris,length=1910>
+##contig=<ID=HBRH_Sicalis_luteiventris,length=1143>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of raw reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of raw reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Read Position Bias (closer to 0 is better)">
+##INFO=<ID=MQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality Bias (closer to 0 is better)">
+##INFO=<ID=BQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Base Quality Bias (closer to 0 is better)">
+##INFO=<ID=MQSBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality vs Strand Bias (closer to 0 is better)">
+##INFO=<ID=SCBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Soft-Clip Length Bias (closer to 0 is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric, http://samtools.github.io/bcftools/rd-SegBias.pdf">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Number of high-quality bases">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths (high-quality bases)">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.23+htslib-1.23
+##bcftools_callCommand=call -mv -Oz -o d_glauca_multisample.vcf_rerun.gz; Date=Fri Apr  3 11:48:40 2026
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_161092.sorted.bam	/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_161139.sorted.bam	/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_161164.sorted.bam	/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_176849.sorted.bam	/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_176863.sorted.bam	/home/g24p229/bioe-591-genomics/students/jason-gregg/outputs/aligned/Diglossa_glauca_218504.sorted.bam
+HBAA_Sicalis_luteiventris	257	.	G	A	1223.96	.	.	GT:PL:DP:AD	0/1:255,0,255:37:19,18	1/1:255,42,0:14:0,14	0/0:0,255,255:132:132,0	1/1:255,220,0:74:0,73	1/1:255,255,0:213:1,210	1/1:255,102,0:34:0,34
+HBAA_Sicalis_luteiventris	313	.	T	C	445.704	.	.	GT:PL:DP:AD	0/1:242,0,255:41:27,14	0/0:0,87,255:29:29,0	1/1:255,202,0:139:6,132	0/0:0,255,255:106:106,0	0/0:0,255,255:222:221,0	0/0:0,141,255:47:47,0
+HBAA_Sicalis_luteiventris	806	.	C	T	206.762	.	.	GT:PL:DP:AD	0/0:0,84,255:29:28,0	0/0:0,66,255:23:22,0	0/0:0,246,255:94:93,1	1/1:255,193,0:64:0,64	0/0:0,255,255:156:155,1	0/0:0,93,255:31:31,0
+HBAD_Sicalis_luteiventris	156	.	C	T	1223.95	.	.	GT:PL:DP:AD	1/1:255,67,0:28:1,26	1/1:255,60,0:20:0,20	1/1:255,231,0:86:1,82	1/1:255,151,0:50:0,50	0/0:0,255,255:136:136,0	0/1:255,0,255:28:14,14
+HBAD_Sicalis_luteiventris	287	.	T	C	704.114	.	.	GT:PL:DP:AD	0/0:0,129,255:43:43,0	0/0:0,66,255:22:22,0	0/0:0,255,255:98:98,0	1/1:255,160,0:53:0,53	1/1:255,255,0:155:0,154	1/1:255,84,0:28:0,28
+HBAD_Sicalis_luteiventris	435	.	G	A	354.864	.	.	GT:PL:DP:AD	0/0:0,247,255:82:82,0	0/0:0,154,255:51:51,0	0/0:0,223,255:87:84,2	0/0:0,255,255:101:101,0	0/1:255,0,255:151:104,47	0/1:143,0,255:57:45,12
+HBAD_Sicalis_luteiventris	553	.	T	G	61.4998	.	.	GT:PL:DP:AD	0/1:16,0,255:34:29,5	0/1:47,0,190:18:12,6	0/0:0,39,255:68:58,10	0/0:0,8,255:67:52,15	0/0:0,107,255:89:78,11	0/1:45,0,255:27:20,7
+HBB2_Sicalis_luteiventris	114	.	C	T	589.87	.	.	GT:PL:DP:AD	0/0:0,62,76:38:36,2	0/1:24,0,38:23:14,9	0/1:121,0,126:84:53,31	0/1:84,0,168:75:47,28	0/1:164,0,74:79:53,26	0/1:242,0,57:37:21,16
+HBB2_Sicalis_luteiventris	172	.	C	T	68.8283	.	.	GT:PL:DP:AD	0/1:48,0,36:151:97,54	0/1:43,0,93:138:80,58	0/1:23,0,146:111:78,32	0/0:0,227,255:143:127,15	0/0:0,255,255:116:115,1	0/0:0,198,255:134:117,16
+HBB2_Sicalis_luteiventris	235	.	T	C	460.895	.	.	GT:PL:DP:AD	0/0:0,188,255:75:73,2	0/0:0,91,255:41:38,2	0/1:156,0,255:186:145,41	0/1:119,0,255:104:77,27	0/1:36,0,255:196:165,30	0/1:202,0,255:60:36,24
+HBB2_Sicalis_luteiventris	716	.	T	C	702.108	.	.	GT:PL:DP:AD	1/1:255,36,0:12:0,12	1/1:253,33,0:11:0,11	1/1:255,69,0:23:0,23	0/0:0,90,255:30:30,0	0/0:0,42,235:14:14,0	0/0:0,36,211:12:12,0
+HBB2_Sicalis_luteiventris	864	.	C	T	919.168	.	.	GT:PL:DP:AD	0/1:123,0,52:43:33,10	0/1:115,0,70:27:21,6	0/1:93,0,35:73:52,21	0/1:255,0,130:69:35,34	0/1:149,0,49:68:46,21	0/1:228,0,45:32:14,15
+HBB2_Sicalis_luteiventris	1241	.	A	G	713.086	.	.	GT:PL:DP:AD	0/0:0,157,255:52:52,0	0/0:0,75,255:25:25,0	0/0:0,255,255:87:86,0	0/1:255,0,255:52:23,29	0/1:255,0,255:147:80,67	1/1:255,82,0:39:1,38
+HBB2_Sicalis_luteiventris	1363	.	G	T	110.183	.	.	GT:PL:DP:AD	0/0:0,126,255:42:42,0	1/1:72,43,0:19:1,18	1/1:92,127,0:48:1,47	0/0:0,123,255:41:41,0	0/0:0,255,255:88:88,0	0/1:2,0,255:13:9,4
+HBB2_Sicalis_luteiventris	1654	.	G	A	962.781	.	.	GT:PL:DP:AD	1/1:255,117,0:39:0,39	1/1:255,66,0:22:0,22	1/1:255,163,0:60:1,59	0/0:0,169,255:62:61,1	0/0:0,164,255:81:77,4	0/1:255,0,143:37:21,16
+HBB2_Sicalis_luteiventris	1977	.	T	C	1297.62	.	.	GT:PL:DP:AD	1/1:255,22,0:18:1,17	0/1:66,0,15:3:1,2	1/1:255,15,0:22:2,20	0/1:255,0,37:23:4,19	1/1:255,108,0:45:1,44	1/1:255,37,0:17:1,16
+HBB2_Sicalis_luteiventris	2199	.	C	G	715.937	.	.	GT:PL:DP:AD	0/0:0,111,255:37:37,0	0/0:0,54,255:18:18,0	0/0:0,255,255:90:90,0	0/1:255,0,255:46:24,22	0/1:255,0,255:118:52,66	0/1:251,0,255:35:22,13
+HBB_Sicalis_luteiventris	96	.	G	A	441.759	.	.	GT:PL:DP:AD	0/0:0,75,255:25:25,0	0/0:0,36,255:12:12,0	0/0:0,148,255:49:49,0	0/1:229,0,255:33:18,15	0/1:255,0,255:68:28,40	0/0:0,45,255:15:15,0
+HBB_Sicalis_luteiventris	152	.	A	G	1443.83	.	.	GT:PL:DP:AD	1/1:255,105,0:35:0,35	1/1:255,48,0:16:0,16	1/1:255,193,0:64:0,64	0/1:255,0,255:51:31,20	0/1:255,0,255:91:54,36	0/1:214,0,255:20:10,10
+HBB_Sicalis_luteiventris	477	.	G	C	704.099	.	.	GT:PL:DP:AD	1/1:255,108,0:36:0,36	1/1:255,90,0:30:0,30	1/1:255,166,0:55:0,55	0/0:0,253,255:84:84,0	0/0:0,255,255:110:110,0	0/0:0,111,255:37:37,0
+HBB_Sicalis_luteiventris	579	.	G	A	728.154	.	.	GT:PL:DP:AD	0/0:0,21,93:7:7,0	0/0:0,15,78:6:5,0	0/1:20,0,77:7:6,1	1/1:255,207,0:75:1,74	1/1:255,255,0:87:0,87	1/1:255,104,0:40:1,39
+HBB_Sicalis_luteiventris	728	.	A	G	458.925	.	.	GT:PL:DP:AD	1/1:255,102,0:49:1,48	0/0:0,90,255:30:30,0	0/1:255,0,255:67:39,27	0/0:0,255,255:101:100,0	0/0:0,255,255:120:119,0	0/0:0,111,255:37:37,0
+HBB_Sicalis_luteiventris	836	.	T	C	1223.91	.	.	GT:PL:DP:AD	0/0:0,123,255:41:41,0	1/1:255,57,0:19:0,19	0/1:255,0,255:46:19,27	1/1:255,202,0:67:0,67	1/1:255,255,0:102:1,101	1/1:255,93,0:31:0,31
+HBB_Sicalis_luteiventris	986	.	G	A	206.736	.	.	GT:PL:DP:AD	1/1:255,60,0:20:0,20	0/0:0,39,221:13:13,0	0/0:0,132,255:44:44,0	0/0:0,151,255:50:50,0	0/0:0,187,255:62:62,0	0/0:0,99,255:33:33,0
+HBB_Sicalis_luteiventris	1113	.	A	G	704.116	.	.	GT:PL:DP:AD	1/1:255,99,0:33:0,33	1/1:255,36,0:12:0,12	1/1:255,157,0:52:0,52	0/0:0,172,255:58:57,0	0/0:0,255,255:112:112,0	0/0:0,81,255:27:27,0
+HBE_Sicalis_luteiventris	290	.	C	G	375.787	.	.	GT:PL:DP:AD	0/0:0,144,255:48:48,0	0/0:0,57,255:19:19,0	0/0:0,255,255:114:114,0	0/0:0,14,255:68:59,9	0/1:255,0,255:151:78,73	0/1:163,0,255:31:20,11
+HBE_Sicalis_luteiventris	405	.	G	T	452.045	.	.	GT:PL:DP:AD	1/1:255,61,0:34:1,33	0/0:0,36,255:12:12,0	1/1:255,154,0:51:0,51	0/0:0,144,255:48:48,0	0/0:0,255,255:92:92,0	0/0:0,99,255:33:33,0
+HBE_Sicalis_luteiventris	792	.	A	C	1223.94	.	.	GT:PL:DP:AD	0/1:255,0,255:36:16,20	1/1:255,63,0:21:0,21	0/0:0,132,255:44:44,0	1/1:255,107,0:41:1,40	1/1:255,157,0:55:0,52	1/1:255,61,0:25:1,24
+HBE_Sicalis_luteiventris	845	.	T	A	707.85	.	.	GT:PL:DP:AD	0/0:0,126,255:42:42,0	0/0:0,60,255:20:20,0	0/0:0,111,255:37:37,0	1/1:255,102,0:34:0,34	0/1:255,0,255:60:28,32	1/1:255,54,0:19:0,18
+HBE_Sicalis_luteiventris	926	.	A	G	458.935	.	.	GT:PL:DP:AD	0/1:255,0,255:58:31,27	1/1:255,84,0:28:0,28	0/0:0,193,255:64:64,0	0/0:0,117,255:40:39,0	0/0:0,255,255:115:115,0	0/0:0,57,255:19:19,0
+HBE_Sicalis_luteiventris	1047	.	T	C	1223.08	.	.	GT:PL:DP:AD	1/1:255,154,0:51:0,51	0/0:0,72,255:24:24,0	0/1:255,0,255:70:34,36	1/1:255,169,0:57:0,56	0/1:255,0,255:90:40,50	1/1:255,75,0:25:0,25
+HBE_Sicalis_luteiventris	1236	.	T	C	704.098	.	.	GT:PL:DP:AD	1/1:255,169,0:56:0,56	1/1:255,63,0:21:0,21	1/1:255,123,0:41:0,41	0/0:0,119,255:53:52,1	0/0:0,193,255:64:64,0	0/0:0,87,255:29:29,0
+HBE_Sicalis_luteiventris	1358	.	C	G	1229.82	.	.	GT:PL:DP:AD	0/1:255,0,255:35:14,20	0/0:0,42,255:14:14,0	0/1:255,0,255:29:15,14	0/1:255,0,255:37:22,15	0/1:255,0,255:46:23,23	0/1:255,0,172:28:11,17
+HBE_Sicalis_luteiventris	1535	.	C	T	377.92	.	.	GT:PL:DP:AD	0/0:0,93,255:31:31,0	1/1:255,42,0:14:0,14	0/1:174,0,176:32:15,17	0/0:0,54,255:38:37,1	0/0:0,111,255:37:37,0	0/0:0,54,255:18:18,0
+HBPI_Sicalis_luteiventris	124	.	T	C	458.924	.	.	GT:PL:DP:AD	0/0:0,90,255:30:30,0	0/0:0,57,246:19:19,0	0/0:0,255,255:115:115,0	0/0:0,169,255:56:56,0	0/1:255,0,255:112:56,56	1/1:255,78,0:26:0,26
+HBPI_Sicalis_luteiventris	237	.	C	A	458.934	.	.	GT:PL:DP:AD	0/0:0,72,255:24:24,0	0/0:0,66,255:22:22,0	0/0:0,255,255:163:162,0	0/0:0,214,255:71:71,0	0/1:255,0,255:192:88,103	1/1:255,72,0:24:0,24
+HBPI_Sicalis_luteiventris	301	.	T	C	1223.84	.	.	GT:PL:DP:AD	1/1:255,81,0:27:0,27	1/1:255,31,0:24:1,23	1/1:255,255,0:174:11,160	1/1:255,93,0:58:4,54	0/1:255,0,255:190:101,86	0/0:0,90,255:30:30,0
+HBPI_Sicalis_luteiventris	382	.	A	C	962.886	.	.	GT:PL:DP:AD	0/1:255,0,255:33:17,16	1/1:255,21,0:27:1,26	1/1:255,255,0:147:1,146	1/1:255,154,0:53:0,51	0/0:0,255,255:217:217,0	0/0:0,84,255:28:28,0
+HBPI_Sicalis_luteiventris	767	.	A	T	1226.17	.	.	GT:PL:DP:AD	0/1:255,0,255:34:18,16	0/1:255,0,228:25:11,14	0/0:0,255,255:195:193,0	1/1:255,181,0:60:0,60	0/1:255,0,255:225:110,113	0/1:255,0,255:33:19,14
+HBPI_Sicalis_luteiventris	888	.	G	A	1487.77	.	.	GT:PL:DP:AD	1/1:255,175,0:58:0,58	1/1:255,105,0:35:0,35	1/1:255,255,0:180:0,180	1/1:255,163,0:54:0,54	0/1:255,0,255:229:112,117	0/1:255,0,255:39:21,18
+HBPI_Sicalis_luteiventris	962	.	C	T	1487.74	.	.	GT:PL:DP:AD	1/1:255,166,0:55:0,55	1/1:255,83,0:42:1,40	1/1:255,255,0:185:1,182	1/1:255,87,0:46:2,44	0/1:255,0,255:229:122,105	0/1:255,0,255:44:24,20
+HBPI_Sicalis_luteiventris	1195	.	G	A	458.943	.	.	GT:PL:DP:AD	0/0:0,160,255:54:53,0	0/0:0,75,255:25:25,0	0/0:0,255,255:174:174,0	0/0:0,208,255:70:69,0	0/1:255,0,255:209:109,100	1/1:255,79,0:40:1,39
+HBPI_Sicalis_luteiventris	1615	.	G	A	445.646	.	.	GT:PL:DP:AD	0/0:0,135,255:45:45,0	0/0:0,69,255:23:23,0	0/0:0,255,255:133:133,0	0/0:0,181,255:60:60,0	0/1:255,0,255:170:99,71	0/1:233,0,255:31:16,14
+HBPI_Sicalis_luteiventris	1689	.	T	C	1487.76	.	.	GT:PL:DP:AD	1/1:255,111,0:37:0,37	1/1:255,34,0:25:1,24	1/1:255,255,0:138:0,138	1/1:255,166,0:55:0,55	0/1:255,0,255:189:91,98	0/1:255,0,255:30:13,17
+HBPI_Sicalis_luteiventris	1784	.	G	A	467.706	.	.	GT:PL:DP:AD	0/0:0,72,255:24:24,0	0/1:255,0,211:23:10,13	0/0:0,255,255:141:141,0	0/0:0,135,255:45:45,0	0/0:0,255,255:192:190,0	0/1:255,0,255:28:12,16
+HBRH_Sicalis_luteiventris	290	.	C	G	432.731	.	.	GT:PL:DP:AD	0/0:0,90,255:30:30,0	0/0:0,45,255:15:15,0	0/0:0,148,255:49:49,0	0/1:220,0,155:46:19,27	0/1:255,0,255:115:61,54	0/0:0,44,255:19:18,1
+HBRH_Sicalis_luteiventris	445	.	T	C	704.126	.	.	GT:PL:DP:AD	1/1:255,77,0:39:1,38	1/1:255,51,0:17:0,17	1/1:255,214,0:72:0,71	0/0:0,160,255:53:53,0	0/0:0,255,255:109:107,0	0/0:0,69,255:23:23,0
+HBRH_Sicalis_luteiventris	530	.	G	A	704.113	.	.	GT:PL:DP:AD	0/0:0,126,255:42:42,0	0/0:0,81,255:27:27,0	0/0:0,255,255:89:89,0	1/1:255,199,0:67:0,66	1/1:255,255,0:114:0,114	1/1:255,117,0:39:0,39
+HBRH_Sicalis_luteiventris	614	.	G	A	544.025	.	.	GT:PL:DP:AD	0/1:255,0,255:46:29,17	0/1:80,0,255:20:14,6	0/1:255,0,255:84:44,38	0/0:0,193,255:64:64,0	0/0:0,255,255:123:122,1	0/0:0,90,255:30:30,0
+HBRH_Sicalis_luteiventris	735	.	C	T	704.202	.	.	GT:PL:DP:AD	0/0:0,129,255:43:43,0	0/0:0,60,255:20:20,0	0/0:0,211,255:70:70,0	1/1:255,205,0:68:0,68	1/1:255,255,0:120:0,120	1/1:255,19,0:20:1,19
+HBRH_Sicalis_luteiventris	937	.	C	G	416.936	.	.	GT:PL:DP:AD	1/1:255,87,0:30:0,29	0/1:213,0,242:18:8,10	0/0:0,181,255:61:60,0	0/0:0,144,255:48:48,0	0/0:0,255,255:87:87,0	0/0:0,69,255:23:23,0
