@@ -1,0 +1,35 @@
+SAMPLES = ["sample1","sample2","sample3","sample4","sample5","sample6"]
+
+rule all:
+    input:
+	"genome/hemoglobin_references.fasta.fai"
+
+rule fastp:
+    conda:
+	"envs/fastp.yaml"
+    input:
+	r1="data/{sample}_R1_001.fastq.gz",
+        r2="data/{sample}_R2_001.fastq.gz"
+    output:
+	r1="results/clean/{sample}_R1_001.clean.fastq.gz",
+        r2="results/clean/{sample}_R2_001.clean.fastq.gz"
+    shell:
+	"""
+	fastp \
+        -i {input.r1} -I {input.r2} \
+        -o {output.r1} -O {output.r2}
+        """
+rule index:
+    input:
+	"genome/hemoglobin_references.fasta"
+    output:
+	"genome/hemoglobin_references.fasta.fai"
+    conda:
+	"envs/align.yaml"
+    shell:
+	"""
+	samtools faidx {input}
+        """
+
+
+

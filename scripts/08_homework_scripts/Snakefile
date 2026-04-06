@@ -1,0 +1,162 @@
+SAMPLES = ["Diglossa_glauca_161092","Diglossa_glauca_161139","Diglossa_glauca_161164","Diglossa_glauca_176849","Diglossa_glauca_176863","Diglossa_glauca_218504"]
+
+rule all:
+    input:
+        expand("results/filtered/{sample}.filtered.vcf.gz", sample=SAMPLES)
+
+#################################
+# FASTP (clean reads)
+#################################
+rule fastp:
+    threads: 4
+    resources:
+        runtime=3600,
+        mem_mb=4000
+    conda:
+        "envs/fastp.yaml"
+    input:
+        r1="data/{sample}_R1_001.fastq.gz",
+        r2="data/{sample}_R2_001.fastq.gz"
+    output:
+        r1="results/clean/{sample}_R1.clean.fastq.gz",
+        r2="results/clean/{sample}_R2.clean.fastq.gz"
+    shell:
+        """
+        fastp \
+        -i {input.r1} -I {input.r2} \
+        -o {output.r1} -O {output.r2}
+        """
+
+#################################
+# INDEX REFERENCE
+#################################
+rule index_ref:
+    input:
+        "genome/hemoglobin_references.fasta"
+    output:
+        "genome/hemoglobin_references.fasta.fai"
+    conda:
+        "envs/align.yaml"
+    shell:
+        """
+        samtools faidx {input}
+        """
+
+rule bwa_index:
+    input:
+        "genome/hemoglobin_references.fasta"
+    output:
+        expand("genome/hemoglobin_references.fasta.{ext}", ext=["amb","ann","bwt","pac","sa"])
+    conda:
+        "envs/align.yaml"
+    shell:
+        """
+        bwa index {input}
+        """
+
+#################################
+# ALIGNMENT
+#################################
+rule align:
+    threads: 4
+    resources:
+        runtime=240,
+        mem_mb=8000
+    input:
+        r1="results/clean/{sample}_R1.clean.fastq.gz",
+        r2="results/clean/{sample}_R2.clean.fastq.gz",
+        ref="genome/hemoglobin_references.fasta",
+        idx=expand("genome/hemoglobin_references.fasta.{ext}", ext=["amb","ann","bwt","pac","sa"])
+    output:
+        "results/aligned/{sample}.sam"
+    conda:
+        "envs/align.yaml"
+    shell:
+        """
+        bwa mem -t 4 {input.ref} {input.r1} {input.r2} > {output}
+        """
+
+#################################
+# SORT + INDEX BAM
+#################################
+rule sort_bam:
+    threads: 2
+    resources:
+        runtime=120,
+        mem_mb=4000
+    input:
+        "results/aligned/{sample}.sam"
+    output:
+        bam="results/aligned/{sample}.sorted.bam"
+    conda:
+        "envs/align.yaml"
+    shell:
+        """
+        samtools sort -o {output.bam} {input}
+        """
+
+rule index_bam:
+    threads: 1
+    resources:
+        runtime=600,
+        mem_mb=4000
+    input:
+        "results/aligned/{sample}.sorted.bam"
+    output:
+        "results/aligned/{sample}.sorted.bam.bai"
+    conda:
+        "envs/align.yaml"
+    shell:
+        """
+        samtools index {input}
+        """
+
+#################################
+# VARIANT CALLING
+#################################
+rule call_variants:
+    resources:
+        runtime=1800,
+        mem_mb=4000
+    input:
+        bam="results/aligned/{sample}.sorted.bam",
+        bai="results/aligned/{sample}.sorted.bam.bai",
+        ref="genome/hemoglobin_references.fasta",
+        fai="genome/hemoglobin_references.fasta.fai"
+    output:
+        "results/vcf/{sample}.vcf.gz"
+    conda:
+        "envs/bcftools.yaml"
+    shell:
+        """
+        bcftools mpileup -f {input.ref} {input.bam} | \
+        bcftools call -mv -Oz -o {output}
+        """
+
+#################################
+# FILTER VARIANTS
+#################################
+rule filter_variants:
+    resources:
+        runtime=1800,
+        mem_mb=4000
+    input:
+        "results/vcf/{sample}.vcf.gz"
+    output:
+        "results/filtered/{sample}.filtered.vcf.gz"
+    conda:
+        "envs/vcftools.yaml"
+    shell:
+        """
+        vcftools \
+        --gzvcf {input} \
+        --remove-indels \
+        --minQ 40 \
+        --mac 2 \
+        --min-meanDP 10 \
+        --recode \
+        --recode-INFO-all \
+        --out results/filtered/{wildcards.sample}.filtered
+
+        bgzip -c results/filtered/{wildcards.sample}.filtered.recode.vcf > {output}
+        """
