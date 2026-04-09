@@ -1,0 +1,7 @@
+Jason Gregg
+Hw9 Table 1 caption
+
+Table 1: Summary statistics of common relatedness estimators of Inca Tern WGS data as in 
+Hauser et al. (2022). Relatedness estimators calculated on dyads using the R program 
+related + adegenate packages (dyadml, quellergt, and wang) and ngsrelate program 
+(theta_rel). NGSrelate theta multiplied by 2 for scale comparison.

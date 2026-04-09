@@ -1,0 +1,8 @@
+Jason Gregg
+Hw9 Figure 1 caption
+
+Figure 1: Histograms of common relatedness estimators of Inca Tern WGS data as in Hauser 
+et al. (2022). Relatedness estimators calculated from dyads using the R program related +
+adegenate packages (1-2, 4) and ngsrelate program (3). NGSrelate theta multiplied by 2 for 
+scale comparison.
+
