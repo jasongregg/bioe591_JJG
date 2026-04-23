@@ -3,7 +3,7 @@
 
 ##This is my BIOE591 course repository for Github page: bioe591_JJG
 
-##It was last updated on April 9th, 2026 with Week 9 homework.
+##It was last updated on April 23, 2026 with Week 10 homework.
 
 **scripts**
 contains homework scripts in dedicated weekly homework folders, e.g. "01_homework_scripts"
@@ -24,3 +24,5 @@ April 5th: homework 7 scripts and outputs added using globus, and pushed to gith
 April 6th: homework 8 Snakefile and associated text files of script, DAG file, html report, and 6 filtered samples.
 
 April 9th: homework 9 scripts (r script and ngsrelate.sbatch script) and outputs: histogram comparison and summary statistics table + captions
+
+April 10th: homework 10 scripts and outputs updated
